@@ -26,7 +26,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                withCredentials([string(credentialsId: '4b4c13e0-8847-442c-84fb-b23004b701e1', variable: 'NETLIFY_AUTH_TOKEN')])
+                withCredentials([string(credentialsId: '4b4c13e0-8847-442c-84fb-b23004b701e1', variable: 'NETLIFY_AUTH_TOKEN')]) {
                     sh 'npx netlify deploy --prod --dir=dist'
                 }
             }
