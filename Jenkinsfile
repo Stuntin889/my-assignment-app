@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     environment {
         NETLIFY_SITE_ID = '4b4c13e0-8847-442c-84fb-b23004b701e1'
     }
